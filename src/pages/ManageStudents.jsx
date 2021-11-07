@@ -177,8 +177,8 @@ export default function ManageStudents() {
     viewStudentDetails(studentId)
       .then((res) => {
         if (res.data.code === 200) {
+          console.log(res.data.data);
           var data = res.data.data;
-          console.log(data);
           setFirstName(data?.FirstName);
           setMiddleName(data?.MiddleName);
           setLastName(data?.LastName);
@@ -199,9 +199,9 @@ export default function ManageStudents() {
         if (action === "show") {
           handleViewStudentModal();
         } else if (action === "edit") {
-          alert("edit operaions here for student id: " + studentId);
+          console.log("edit operaions here for student id: " + studentId);
         } else if (action === "clear") {
-          alert("clear operaions here for student id: " + studentId);
+          console.log("clear operaions here for student id: " + studentId);
         }
       })
       .catch((err) => {
@@ -471,7 +471,13 @@ export default function ManageStudents() {
                     <DropDown
                       data={[
                         { title: "A+", value: "A+" },
+                        { title: "A-", value: "A-" },
                         { title: "B+", value: "B+" },
+                        { title: "B-", value: "B-" },
+                        { title: "AB+", value: "AB+" },
+                        { title: "AB-", value: "AB-" },
+                        { title: "O+", value: "O+" },
+                        { title: "O-", value: "O-" },
                       ]}
                       placeholder="Blood Group"
                       width={"49%"}
@@ -480,8 +486,13 @@ export default function ManageStudents() {
                     />
                     <DropDown
                       data={[
-                        { title: "Hinduism", value: "1" },
-                        { title: "Islam", value: "0" },
+                        { title: "Hindu", value: "1" },
+                        { title: "Muslim", value: "2" },
+                        { title: "Christian", value: "3" },
+                        { title: "Buddhist", value: "4" },
+                        { title: "Sikh", value: "5" },
+                        { title: "Jain", value: "6" },
+                        { title: "Others", value: "7" },
                       ]}
                       placeholder="Religion"
                       width={"49%"}
@@ -490,7 +501,13 @@ export default function ManageStudents() {
                   </div>
                   <div className={classes.rowDiv}>
                     <DropDown
-                      data={[{ title: "General", value: "general" }]}
+                      data={[
+                        { title: "General", value: "General" },
+                        { title: "SC", value: "SC" },
+                        { title: "ST", value: "ST" },
+                        { title: "OBC", value: "OBC" },
+                        { title: "Other", value: "Other" },
+                      ]}
                       placeholder="Category"
                       width={"49%"}
                       paddingRight={"15px"}
@@ -509,8 +526,21 @@ export default function ManageStudents() {
                   <div className={classes.rowDiv}>
                     <DropDown
                       data={[
-                        { title: "Hindi", value: "1" },
-                        { title: "Bengali", value: "0" },
+                        { title: "English", value: "1" },
+                        { title: "Hindi", value: "2" },
+                        { title: "Bengali", value: "3" },
+                        { title: "Marathi", value: "4" },
+                        { title: "Telugu", value: "5" },
+                        { title: "Tamil", value: "6" },
+                        { title: "Gujarati", value: "7" },
+                        { title: "Urdu", value: "8" },
+                        { title: "Kannada", value: "9" },
+                        { title: "Odia", value: "10" },
+                        { title: "Malayalam", value: "11" },
+                        { title: "Punjabi", value: "12" },
+                        { title: "Assamese", value: "13" },
+                        { title: "Maithili", value: "14" },
+                        { title: "Sanskrit", value: "15" },
                       ]}
                       placeholder="Mother Tongue"
                       width={"49%"}
@@ -520,7 +550,9 @@ export default function ManageStudents() {
                     <DropDown
                       data={[
                         { title: "Indian", value: "1" },
-                        { title: "Pakistani", value: "0" },
+                        { title: "Bangladeshi", value: "2" },
+                        { title: "Japanese", value: "3" },
+                        { title: "Kuwaiti", value: "4" },
                       ]}
                       placeholder="Nationality"
                       width={"49%"}

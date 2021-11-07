@@ -123,6 +123,7 @@ const OnlineApplication = () => {
   }, []);
 
   const getSchoolDetail = () => {
+    localStorage.setItem("academicYear", "2021");
     setIsLoader(true);
     getSchoolDetails("", "vi", "2021")
       .then((res) => {
@@ -580,6 +581,7 @@ const OnlineApplication = () => {
               <TextField
                 variant="outlined"
                 placeholder="Email"
+                // value={"pandeysid85@gmail.com"}
                 onChange={(e) => setLogin({ ...login, email: e.target.value })}
                 className={classes.form}
               />
@@ -587,6 +589,7 @@ const OnlineApplication = () => {
                 variant="outlined"
                 type="password"
                 placeholder="Password"
+                // value={"1234"}
                 onChange={(e) =>
                   setLogin({ ...login, password: e.target.value })
                 }

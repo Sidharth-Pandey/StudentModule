@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
@@ -45,6 +46,7 @@ const useStyles = makeStyles({
 
 const Wrapper = ({ children }) => {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <div className={classes.wrapper}>
@@ -53,9 +55,12 @@ const Wrapper = ({ children }) => {
       </div>
 
       <div className={classes.content}>
-        {/* <Link to="/ApplicationForm"> */}
-        <span className={classes.applyButton}>Apply</span>
-        {/* </Link> */}
+        <span
+          onClick={() => history.push("/apply")}
+          className={classes.applyButton}
+        >
+          Apply
+        </span>
         {children}
       </div>
     </div>

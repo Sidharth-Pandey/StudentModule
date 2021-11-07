@@ -8,6 +8,7 @@ import Payments from "./pages/Payments";
 import OnlineApplication from "./pages/OnlineApplication";
 import ProtectedRoute from "./components/utils/ProtectedRoute";
 import { getUserDetails } from "./api/api";
+import ApplyApplication from "./pages/ApplyApplication";
 
 function App() {
   const history = useHistory();
@@ -28,6 +29,7 @@ function App() {
         <ProtectedRoute path="/my-applications" component={MyApplications} />
         <ProtectedRoute path="/personal-info" component={PersonalInfo} />
         <ProtectedRoute path="/payments" component={Payments} />
+        <ProtectedRoute path="/apply" component={ApplyApplication} />
       </Wrapper>
     </Switch>
   );

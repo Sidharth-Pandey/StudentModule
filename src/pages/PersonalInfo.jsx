@@ -102,9 +102,6 @@ const PersonalInfo = () => {
         <Button className={classes.editButton}>
           <b>Edit Personal Info</b>
         </Button>
-        <Button className={classes.editButton}>
-          <b>Reset Password</b>
-        </Button>
         {isLoading ? (
           <Loader></Loader>
         ) : (
@@ -136,13 +133,6 @@ const PersonalInfo = () => {
                   readOnly: true,
                 }}
               />
-              {/* <TextField
-                style={{ margin: "2rem 0" }}
-                id="address"
-                label="Address"
-                variant="standard"
-                fullWidth
-              /> */}
               <TextField
                 style={{ margin: "2rem 0" }}
                 id="email"

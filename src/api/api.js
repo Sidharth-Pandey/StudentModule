@@ -128,7 +128,6 @@ export function register({
 
 export function confirmOtp({ phoneOtp, emailOtp, userId }) {
   const data = { OTPphone: phoneOtp, OTPMail: emailOtp, UserID: userId };
-  console.log(data);
   return axios.post(
     "https://www.simplifieducation.com/api/auth/confirm_otp.php",
     data
@@ -137,10 +136,23 @@ export function confirmOtp({ phoneOtp, emailOtp, userId }) {
 
 export function loginUser({ email, password }) {
   const data = { eMail: email, Password: password };
-  console.log(data);
   return axios.post(
     "https://www.simplifieducation.com/api/auth/loginUser.php",
     data
+  );
+}
+
+export function updateUser(Name, Password, token) {
+  let config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  const data = { Name: Name, Password: Password };
+  return axios.post(
+    "https://www.simplifieducation.com/api/auth/updateUserInfo.php",
+    data,
+    config
   );
 }
 
